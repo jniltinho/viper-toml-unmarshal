@@ -31,6 +31,9 @@ func main() {
 		fmt.Printf("couldn't load config: %s", err)
 		os.Exit(1)
 	}
+	
+	println(v.GetString("linux.home"))
+	
 	var c Config
 	if err := v.Unmarshal(&c); err != nil {
 		fmt.Printf("couldn't read config: %s", err)
